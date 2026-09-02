@@ -1,25 +1,12 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -e
 
-echo "Installing Python packages..."
-python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
+# Chinese fonts so matplotlib doesn't render 豆腐块 (tofu boxes)
+sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk
 
-echo "Installing OpenCode..."
-npm install -g opencode-ai
+pip install --upgrade pip
+pip install -r requirements.txt
 
-echo "Checking installations..."
-python -c "
-import jieba
-import qhchina
-import numpy
-import matplotlib
-import sklearn
-import plotly
+npm install -g opencode-ai@latest
 
-print('All Python packages imported successfully.')
-"
-
-opencode --version
-
-echo "Development environment is ready."
+echo "Done. Run 'opencode' to start the AI agent."
