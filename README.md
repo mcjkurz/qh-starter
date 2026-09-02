@@ -9,6 +9,5 @@ This repository is a template for GitHub Codespaces that installs:
 - plotly
 
 Files:
-- 红楼梦.txt — (place your text here)
+- hongloumeng.txt — 紅樓夢
 - .devcontainer/ — devcontainer config and setup script
-- .env.example — example environment variables (do NOT commit secrets)
